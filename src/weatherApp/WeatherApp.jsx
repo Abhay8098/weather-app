@@ -13,10 +13,7 @@ function WeatherApp() {
 
   // <<----------Function to search the city-------------->>
   const search=(event)=>{
-    if(event.key!=='Enter'){
-      return 
-    }
-    else{
+   
       var inpVal=document.getElementById('search-box').value.toLowerCase();
       if(inpVal!==''){
         axios(`https://api.weatherapi.com/v1/current.json?key=0bab7dd1bacc418689b143833220304&q=${inpVal}`)
@@ -24,7 +21,7 @@ function WeatherApp() {
       .then(data=>setLocation(data))
       .catch(err=>setError(err))
       }
-    }
+    
   }
 
   // <<-----------for current ip when application load-------->>
